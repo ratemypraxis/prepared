@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prepared</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #181A1B;
+            overflow: hidden;
+            font-size: 12px;
+        }
+
+
+        #video-container {
+            width: 100%;
+            height: 50vh;
+        }
+
+        #video {
+            width: 100%;
+            height: 100%;
+            /* padding: 15px; */
+            margin: auto;
+        }
+
+        #doc-container {
+            width: 100%;
+            margin: 0 auto;
+            height: 50vh;
+            overflow-y: hidden;
+            color: white;
+            box-sizing: border-box;
+        }
+
+        #doc {
+            width: 100%;
+            height: 100%;
+            line-height: 1.2;
+            font-size: 16px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #dimmer {
+            display: none;
+            position: fixed;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color:rgba(47, 47, 47, 0.9);
+            border: 1px solid #000000;
+            padding: 100%;
+            z-index: 1000;
+        }
+
+        #enter-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 5px 20px;
+            opacity: 1;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 26px;
+            border: 1px solid white;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        #info-btn {
+            /* display: none; */
+            position: fixed;
+            /* bottom: 3%;
+            left: 5%; */
+            transform: translate(-50%, -50%);
+            background-color: black;
+            /* font-size: 16px; */
+            color: white;
+            border: 1px solid white;
+            /* padding: 0px 20px; */
+            border-radius: 50px;
+            z-index: 1000;
+            cursor: pointer;
+
+        }
+
+        #info-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            border: 1px solid #000000;
+            padding: 15px 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 10000;
+        }
+
+        #info-content {
+            text-align: center;
+        }
+
+        #close-button {
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+            padding: 2px 10px;
+            cursor: pointer;
+            border-radius: 25px;
+            cursor: pointer;
+        }
+
+
+        #spacer {
+            width: 100%;
+            height: 0;
+        }
+    
+
+        @media (min-width: 600px) {
+            #video-container {
+                width: 50%;
+                height: 100vh;
+            }
+            #doc {
+                padding-left: 0px;
+
+            }
+
+            #info-popup {
+                padding: 15px 40px;
+
+            }
+
+            #info-content {
+                font-size: 16px;
+            }
+
+            #info-btn {
+            bottom: 3%;
+            left: 5%;
+            font-size: 16px;
+            padding: 0px 20px;
+
+
+            }
+            
+
+            #doc-container {
+                width: calc(50% - 40px);
+                height: 100vh;
+                
+            }
+
+            #spacer {
+                width: 25%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #info-btn {
+            top: 4.5%;
+            right: 0.5%;
+            font-size: 12px;
+            padding: 0px 15px;
+
+            }
+          
+        }
+
+        @keyframes scrollAnimation {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-490%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="info-btn" onclick="showPopup()"><pre>?</pre></div>
+    
+    <div id="info-popup">
+        <div id="info-content">
+          <h2><pre>Prepared</pre></h2>
+          <p><pre>by</pre><pre><a href="https://www.serena-devi.com/">Serena</a> & <a href="https://www.2nd.systems">Sim</a></pre></p>
+          <p>Learn more on our <a href="https://github.com/ratemypraxis/prepared"><pre>project repository.</pre></a></p>
+          <button id="close-button" onclick="closePopup()"><pre>back</pre></button>
+        </div>
+      </div>
+
+    <div id="dimmer"><button id="enter-btn" onclick="startAnimation()"><pre>I’m Prepared</pre></button></div>
+
+    <div id="video-container">
+        <video id="video" autoplay loop>
+            <source src="prep.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="doc-container">
+    <pre id="doc">
+I have thought of many of the issues you have discussed and actually the first video I have watched regarding this. and it has given me even more scenarios to consider! Women have to be situationally aware unless they want to be victims
+
+Its important for preppers to understand themselves, as well as understand the potentials of all men and women. I am a Woman. I have Daughters and Granddaughters. anyone on this channel knows their immediate circle they can trust. I'm a woman and very independent . I like to think that my skills would be enough to keep me a useful person to be around. 
+
+your after the shit-hits-the-fan is certainly lopsided...you have focused on manipulation and deceit and using sexual appeal, but without mentioning some of the feminine skill sets of food preservation, baking, gardening,seamstress, management, healing foraging, being able to calm a child, nurture, calm people, sew clothing,,  make yarn from wool, knit and crochet. , make candles and soap, care for animals…I turned off my furnace and all utilities and didn’t buy a thing  for a week to do a practice run. I already have all I really need from the stores. Wants and needs are 2 very different animals. Beans, bullets, salt bandaids. with only a few shirts, do you wash often? Tea tree oil.  Anti fungal, anti bacterial, AND anti viral. 	first aid a must.
+
+I am aware that most women will have no clue in our society about how much stronger a man is. there is physiological differences too like bone density and muscle density.  
+so many women will face the truths about physics and size and strengths matter.  
+
+you will have those woman who will leave their mate to find someone to protect them particularly if they have children. it happened in the great depression. but there are women who do not do the manipulative thing. I think one way men can protect themselves from this is to look for like- minded women. 
+
+husband has finally gotten on board and we have been cleaning out the junk and stockpiling the necessary items. I suggested we spend a weekend with all breakers tripped and see how we do. I was raised and raised my own daughters to fight. intriguing to watch as a woman. both gave me a lot more hope....and a lot more dread for how things could go. That isn't just applied to not walking in dark parking lots but in relationships as well. We are trained to be aware of tone of voice and body posture. he was not interested but it made him think about what could happen
+
+we live not too far apart, and if things do go down, of course you'll have a place in my community if you so desire/need. some people will rise to the occasion and be good for the 'tribe', others will decide to only have their own selves for importance. Establishing a team, knowing each one’s roles, knowing each other’s strengths and weaknesses and hopefully balancing each other out. The key  is not to trust anybody not already vetted and trustworthy. Women and even children could be used in traps. 
+
+    you aren’t prepared? Bummer.” If an individual doesn’t put in the work, but expects to be saved – they blew it.
+
+I don’t have any pepper spray should I? Sometimes they don't know how they will react. use every trick, be loud, vomit, spit, scratch and bite. go for the eyes, up the nose and in the ear. firearms, pepper spray,
+    an incredible device called a bear taser or bear stun baton – can purchase at gun shops. it is a heavy duty metal baton and has a flashlight at the end and a massive electrical charge when touched. it is legal to own and purchase! 
+
+I've seen men who are generous until things pinch a little 	all generosity goes away. 
+
+you need to know this about the people you are with. whether it's right or wrong, still good to know. As I often tell my husband "You gotta sleep sometime!"
+
+I know I can never be fully prepared, and if it comes to it, my body won't let me.
+
+a weapon can be taken away	
+Remember- this video is about UNUSUAL items
+
+Hard candy saved me once
+
+First, you need to stay clean
+Water might be a problem - clean and hot water! 
+
+I highly recommend getting your liquor in miniatures
+also for sterilizing and cleaning a wound. 		really important.
+
+lots of wood even if you don't have a fireplace
+
+Consider more traditional lighting options
+
+things we are used to may not be available 
+
+Just have it written down so you can pass it on
+
+major lines all down
+
+Some went months
+
+I open them up and let them set out
+
+
+going to 
+you know 
+to be 
+
+you can	if you 				and I 
+
+this is 
+a lot 
+
+
+that you 	want to	and then 	a little 
+
+I have 					I don't 
+
+have a 	on the 	that I 
+
+and you 					you have 	lot of
+
+so I 	to do 	to get 
+
+have to	kind of
+it is 
+
+is a 		that is
+
+in a
+to have 
+to make 
+
+all of 
+
+I'm going 
+
+and it 
+and the 
+and it's
+
+need to 
+
+but I
+
+
+you want
+out of 
+
+it was for the 
+
+I think 										you don't 
+
+it's just 	little bit 
+
+
+I just 
+
+I want 
+
+we have 
+
+if you're 		one of
+
+it and 
+
+don't know 
+
+you're going			you are 		make sure 
+we're going
+
+I know
+    
+you need
+
+don't have	in your 
+
+like that 
+
+a good 
+right now 
+it's not 			the other
+
+that we			of these 
+    
+look at 
+of course
+there are 
+
+know 
+
+mine
+
+if 
+your
+can 
+be
+    
+we 
+all 
+do 
+with
+out 
+
+not 
+get 
+
+some 
+
+
+I'm
+here 
+
+
+don't 
+they 
+what
+want 
+
+as 
+that's 
+about 
+one 
+
+now really 
+
+these
+go 
+right 
+little 
+
+because 
+
+make 
+good 	
+
+when
+people 
+think 
+
+very 
+need 
+    
+will 
+see 
+
+into 
+time 
+from 
+more 
+how
+those 
+take
+
+no			something
+
+our 
+water 
+
+down 
+also
+
+                </pre>
+    </div>
+
+    <div id="spacer"></div>
+
+    <script>
+        function startAnimation() {
+            document.getElementById('dimmer').style.display = 'none';
+            document.getElementById('video').play(); // Autoplay the video
+            document.getElementById('doc').style.animation = 'scrollAnimation 240s linear infinite'; // Add animation dynamically
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('dimmer').style.display = 'block';
+        });
+        function showPopup() {
+    document.getElementById('info-popup').style.display = 'block';
+    document.getElementById('video').pause(); // Pause the video
+    document.getElementById('doc').style.animationPlayState = 'paused'; // Pause the document animation
+    document.getElementById('dimmer').style.display = 'block';
+    document.getElementById('enter-btn').style.display = 'none';
+
+
+  }
+
+  function closePopup() {
+    document.getElementById('info-popup').style.display = 'none';
+    document.getElementById('video').play(); // Resume the video
+    document.getElementById('doc').style.animationPlayState = 'running'; // Resume the document animation
+    document.getElementById('dimmer').style.display = 'none';
+    document.getElementById('enter-btn').style.display = 'none';
+
+
+  }
+
+    </script>
+</body>
+</html>
